@@ -1,20 +1,23 @@
 from fastapi import FastAPI
-
-# Create an instance of the FastAPI application
-app = FastAPI(
-    title="AI Resume Matcher API",
-    description="Backend API for Resume-to-Job Matcher",
-    version="1.0.0",
-)
+from app.routers import upload
+from fastapi.middleware.cors import CORSMiddleware
 
 
-# Root endpoint
+app = FastAPI(title="AI Resume Matcher API", version="1.0.0")
+
+# include router
+app.include_router(upload.router, prefix="/api/resume")
+
+
 @app.get("/")
 def home():
     return {"message": "Welcome to AI Resume Matcher API"}
 
 
-# Health check endpoint
-@app.get("/health")
-def health():
-    return {"status": "Server is running successfully"}
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:4200"],  # or ["*"] for dev
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
