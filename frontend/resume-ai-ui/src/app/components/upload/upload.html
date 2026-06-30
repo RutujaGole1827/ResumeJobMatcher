@@ -1,0 +1,101 @@
+<div class="upload-container">
+
+  <h2>AI Resume Analyzer</h2>
+
+  <input type="file" (change)="onFileSelect($event)" />
+
+  <div class="drop-zone"
+       (drop)="onDrop($event)"
+       (dragover)="onDragOver($event)">
+    Drag & Drop Here
+  </div>
+
+  <button (click)="upload()">
+    Upload
+  </button>
+
+  <!-- LOADING -->
+  <div *ngIf="loading">
+    <p>Analyzing resume with AI...</p>
+  </div>
+
+  <!-- RESULTS -->
+  <!-- LOADING STATE -->
+<div *ngIf="loading" class="loading-box">
+  <p>🤖 AI is analyzing your resume...</p>
+</div>
+
+<!-- RESULT PANEL -->
+<div *ngIf="responseData" class="dashboard">
+
+  <h1 class="title">🚀 AI Resume Dashboard</h1>
+
+  <div class="grid">
+
+    <!-- EXPERIENCE -->
+    <div class="card glow">
+      <h3>Experience</h3>
+      <p class="big">{{ responseData.experience }} years</p>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="card glow">
+      <h3>Skills</h3>
+      <div class="skills">
+        <span class="chip" *ngFor="let s of responseData.skills">
+          {{ s }}
+        </span>
+      </div>
+    </div>
+
+    <!-- JOB MATCH -->
+<div class="card">
+  <h3>💼 Job Matches</h3>
+
+  <div class="job-card" *ngFor="let job of responseData.job_matches">
+
+    <div class="job-title">{{ job.role }}</div>
+
+    <div class="job-score">
+      {{ job.score }}%
+    </div>
+
+  </div>
+</div>
+<!-- new code added -->
+<div class="score-wrapper">
+
+  <svg class="score-circle">
+    <circle class="bg" cx="60" cy="60" r="50"></circle>
+    <circle class="progress" cx="60" cy="60" r="50"
+      [style.stroke-dashoffset]="440 - (440 * responseData.match_score / 100)">
+    </circle>
+  </svg>
+
+  <div class="score-text">
+    {{ responseData.match_score }}%
+  </div>
+
+</div>
+<div class="card">
+  <h3>🧠 AI Summary</h3>
+
+  <p>
+    You have strong experience in
+    <b>{{ responseData.skills?.slice(0,2).join(', ') }}</b>,
+    with {{ responseData.experience }} years of experience.
+  </p>
+</div>
+<div class="card">
+  <h3>Skill Strength</h3>
+
+  <div *ngFor="let s of responseData.skills">
+    <p>{{ s }}</p>
+    <div class="bar">
+      <div class="fill"></div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>

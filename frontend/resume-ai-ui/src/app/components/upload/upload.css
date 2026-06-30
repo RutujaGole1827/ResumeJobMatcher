@@ -1,0 +1,269 @@
+.upload-container {
+  width: 50%;
+  margin: 80px auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.drop-zone {
+  border: 2px dashed #60a5fa;
+  padding: 40px;
+  margin: 20px 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.drop-zone:hover {
+  background: rgba(96,165,250,0.1);
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.result-card {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #111827;
+  color: white;
+}
+
+.section {
+  margin-bottom: 15px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background: #2563eb;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.score {
+  font-size: 32px;
+  font-weight: bold;
+  color: #22c55e;
+}
+
+.loading-box {
+  margin-top: 20px;
+  color: #60a5fa;
+}
+.dashboard {
+  margin-top: 20px;
+  color: white;
+}
+
+.card {
+  background: #111827;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background: #3b82f6;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+.dashboard {
+  margin-top: 30px;
+  color: white;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 20px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.glow {
+  box-shadow: 0 0 20px rgba(59,130,246,0.3);
+}
+
+.big {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.chip {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.job-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.badge {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+.score-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+}
+
+.score-circle svg {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+
+.score-circle circle {
+  fill: none;
+  stroke-width: 10;
+  stroke: #2d3748;
+}
+
+.score-circle circle:nth-child(2) {
+  stroke: #3b82f6;
+  stroke-dasharray: 440;
+  transition: 0.6s ease;
+}
+
+.score-text {
+  position: absolute;
+  top: 55%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: bold;
+}
+.bar {
+  width: 100%;
+  height: 6px;
+  background: #1f2937;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.fill {
+  width: 70%;
+  height: 100%;
+  background: #3b82f6;
+  border-radius: 10px;
+}
+.score-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 20px auto;
+}
+
+.score-circle {
+  width: 140px;
+  height: 140px;
+  transform: rotate(-90deg);
+}
+
+.score-circle circle {
+  fill: none;
+  stroke-width: 10;
+}
+
+.score-circle .bg {
+  stroke: #1f2937;
+}
+
+.score-circle .progress {
+  stroke: #3b82f6;
+  stroke-dasharray: 440;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.8s ease;
+}
+
+.score-text {
+  position: absolute;
+  top: 55%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+.job-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 8px 0;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+}
+
+.job-title {
+  font-weight: 500;
+}
+
+.job-score {
+  color: #22c55e;
+  font-weight: bold;
+}
